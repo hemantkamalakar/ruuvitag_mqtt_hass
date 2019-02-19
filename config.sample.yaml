@@ -1,0 +1,30 @@
+home_assistant:
+    mqtt_broker: 192.168.1.100
+    mqtt_broker_port: 1883
+    user: user
+    password: password
+    topic: 'ruuvi/sensor/'
+    update_frequency_seconds: 55
+
+tags: 
+    "living_room": "F3:4B:FB:D9:F9:45"
+    "bedroom": "EE:EE:58:4F:82:95"    
+   
+logging:
+    version: 1
+    disable_existing_loggers: True
+    formatters:
+        default:
+            format: '[%(asctime)s  %(levelname)s] %(message)s'
+
+    handlers:
+        console:
+            class: logging.StreamHandler
+            formatter: default
+    root:
+        level: INFO
+        handlers: [console]
+    loggers:
+        __main__:
+            level: INFO
+
